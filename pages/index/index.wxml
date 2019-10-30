@@ -1,2 +1,33 @@
-<!--pages/index/index.wxml-->
-<text>pages/index/index.wxml</text>
+<!--index.wxml-->
+<search/>
+<view class="swiper">
+  <swiper indicator-dots>
+    <block wx:for="{{swiperImg}}" wx:key="{{index}}">
+      <swiper-item>
+        <image class="swiper-item" src="{{item.image_src}}" mode="aspectFill"></image>
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<view class="nav_menu">
+  <view class="list" wx:for="{{navData}}" wx:key="{{index}}">
+    <image src="{{item.image_src}}" mode="aspectFill"></image>
+  </view>
+</view>
+<view class="main" wx:for="{{floors}}" wx:key="{{index}}">
+  <navigator url="">
+    <image src="{{item.floor_title.image_src}}" ></image>
+  </navigator>
+  <view class="floor">
+    <view class="left">
+     <navigator url="">
+      <image src="{{item.product_list[0].image_src}}" mode="aspectFill"></image>
+     </navigator>
+    </view>
+    <view class="right">
+     <navigator url="" wx:for="{{item.product_list}}" wx:key="{{index}}" wx:if="{{index>0}}">
+       <image src="{{item.image_src}}" mode="aspectFill"></image>
+     </navigator>
+    </view>
+  </view>
+</view>

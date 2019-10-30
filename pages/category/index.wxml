@@ -1,0 +1,8 @@
+<!--pages/category/index.wxml-->
+<search/>
+<view class="containar">
+  <view class="menu">
+
+  </view>
+  <view class="content"></view>
+</view>
