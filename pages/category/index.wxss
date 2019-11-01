@@ -1,1 +1,69 @@
 /* pages/category/index.wxss */
+
+.containar {
+   position: fixed;
+   top: 120rpx;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+}
+.containar .menu{
+  background: #f4f4f4;
+  overflow-y: auto;
+  font-size: 14px;
+}
+.containar .menu .menu_item {
+  width: 200rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-bottom: 1px solid #eee;
+}
+.content{
+  width: 100%;
+  padding: 5px 5px;
+  flex: 1;
+  overflow-y: auto;
+}
+.content .top_image image{
+    width: 100%;
+    height: 200rpx;
+}
+.content .title{
+  height: 150rpx;
+  line-height: 150rpx;
+  text-align: center;
+}
+.content .brand {
+  display: flex;
+  flex-wrap: wrap;
+ 
+}
+
+.content .brand .brand_item {
+    width: 33.33%;
+    height: 150rpx;
+    padding: 20rpx 40rpx;
+    box-sizing: border-box;
+    font-size: 12px;
+    text-align: center;
+}
+.brand .brand_item image{
+  width: 100%;
+  height: 60rpx;
+}
+.active{
+  position: relative;
+  background: #ffffff;
+  color: #eb4653;
+}
+.active::before{
+  position: absolute;
+  content: "";
+  top: 20rpx;
+  left: 0;
+  display: block;
+  width: 5rpx;
+  height: 60rpx;
+  background: #eb4450;
+}

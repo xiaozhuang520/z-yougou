@@ -2,7 +2,27 @@
 <search/>
 <view class="containar">
   <view class="menu">
-
+    <view class="menu_item {{current==index?'active':''}}" wx:for="{{categories}}" wx:key="{{index}}" bindtap="handleTaBar" data-index="{{index}}">
+      {{item.cat_name}}
+    </view>
   </view>
-  <view class="content"></view>
+  <view class="content">
+    <view class="top_image">
+      <image src="../../images/bg.jpg" mode="aspectFill"></image>
+    </view>
+    <view class="content_brand" wx:for="{{categories[current].children}}" wx:key="{{index}}">
+      <view class="title">
+        {{item.cat_name}}
+      </view>
+      <navigator url="/pages/goods_list/index?query={{item.cat_name}}">
+        <view class="brand">
+          <view class="brand_item" wx:for="{{item.children}}" wx:key="{{index}}">
+            <image src="{{item.cat_icon}}" mode="aspectFill"></image>
+            {{item.cat_name}}
+          </view>
+        </view>
+      </navigator>
+
+    </view>
+  </view>
 </view>

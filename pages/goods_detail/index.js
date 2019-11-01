@@ -1,4 +1,4 @@
-// pages/category/index.js
+// pages/goods_detail/index.js
 import request from '../../utils/request.js'
 Page({
 
@@ -6,29 +6,27 @@ Page({
    * 页面的初始数据
    */
   data: {
-      current:0,
-      categories:[]
+      goodsDetail:{}
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function () {
-      request({
-        url:"/api/public/v1/categories"
-      }).then(res=>{
-        const {message}=res.data;
-        this.setData({
-         categories:message
-        })
-      })
-  },
-  handleTaBar(event){
-    const {index}=event.target.dataset;
-    this.setData({
-      current:index
+  onLoad: function (options) {
+    const {goods_id}=options;
+    request({
+      url:"/api/public/v1/goods/detail",
+      data:{
+        goods_id
+      }
+    }).then(res=>{
+     const {message}=res.data;
+     this.setData({
+       goodsDetail:message
+     })
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
