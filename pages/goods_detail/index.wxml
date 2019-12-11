@@ -32,17 +32,17 @@
   </view>
   <button open-type="contact" class="contact"></button>
 
-  <navigator class="cart" url="/pages/cart/index" open-type="switchTab">
+  <navigator class="cart" url="/pages/cart/index" open-type="switchTab" >
 
     <view class="iconfont icon-gouwuche"></view>
-    <text>购物车</text>
+    <text >购物车</text>
 
   </navigator>
-  <navigator class="add_cart" url="/pages/cart/index?goods_id={{goodsDetail.goods_id}}" open-type="switchTab">
-    <view>
+  <view class="add_cart"  open-type="switchTab" bindtap="handleGoods">
+   
       加入购物车
-    </view>
-  </navigator>
+    
+  </view>
   <view class="purchase">
     立即购买
   </view>

@@ -1,1 +1,163 @@
 /* pages/cart/index.wxss */
+.get_address{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx;
+}
+.get_address icon{
+  display: block;
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(45deg);
+  margin-right: 7rpx;
+}
+.user{
+  padding: 20rpx 10rpx 0 10rpx;
+}
+.user .user_info{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+}
+.address{
+margin: 20rpx 0;
+}
+.info_right{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.info_right icon{
+  display: block;
+  width: 15rpx;
+  height: 15rpx;
+  border-top: 1px solid #666;
+  border-right: 1px solid #666;
+  transform: rotate(45deg);
+  margin-right: 20rpx;
+  margin-left: 40rpx;
+}
+.image{
+  height: 14rpx;
+  width: 100%;
+  border-bottom: 20rpx solid #f4f4f4;
+}
+.main .message{
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+}
+.title{
+  padding: 20rpx;
+  border-bottom: 1px solid #e0e0e0;
+}
+.goods_list{
+  margin-bottom: 100rpx;
+}
+.goods_item{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #e0e0e0;
+  padding: 20rpx 0;
+}
+.goods_item icon{
+  padding: 0 40rpx;
+}
+.goods{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+ 
+}
+.goods image{
+  width: 180rpx;
+  height: 180rpx;
+  margin-right: 20rpx;
+}
+.goods_right{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  margin-right: 15rpx;
+}
+.goods_title{
+   display: -webkit-box;
+   text-overflow: ellipsis;
+   overflow : hidden;
+   -webkit-line-clamp: 2;
+   -webkit-box-orient: vertical;
+   font-size: 14px;
+}
+.goods_right .price_num{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.price_num .price{
+  font-size: 14px;
+  color: red;
+}
+.price_num .num{
+  display: flex;
+} 
+.price_num .num text{
+  display: block;
+  width: 50rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  border: 2px solid #666666;
+}
+.price_num .num input{
+  width: 80rpx;
+  height: 50rpx;
+  text-align: center;
+  margin: 10rpx;
+}
+.footer{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100rpx;
+  border-top: 1px solid #f4f4f4;
+  background: #fff;
+  z-index: 99;
+}
+.footer .btn{
+  margin-right: 80rpx;
+}
+.footer_right{
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.footer icon{
+  padding: 30rpx;
+}
+.footer .settle_accounts{
+  width: 200rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  background: red;
+  color: #fff;
+  font-size: 12px;
+}
+.footer_right .total view{
+  font-size: 12px;
+  color: #a7a7a7;
+}
+.total .price{
+  color: red;
+}

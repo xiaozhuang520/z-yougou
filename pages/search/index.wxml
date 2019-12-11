@@ -1,0 +1,22 @@
+<!--pages/search/index.wxml-->
+<view class="search">
+  <view class="search_input">
+    <icon type="search" size="20"></icon>
+    <input placeholder="请输入你想要的内容" bindinput="handleInput"
+    bindconfirm="handleConfirm"
+    value="{{searchValue}}"
+    ></input>
+  </view>
+  <view class="cancel" wx:if="{{showConcel}}" bindtap="handleCancel">取消</view>
+</view>
+
+<view class="history">
+  <text>历史搜索</text>
+  <icon type="clear" size="20" bindtap="handleEmpty"/>
+</view>
+
+<view class="content">
+  <navigator url="/pages/goods_list/index?query={{item}}" class="item" wx:for="{{historyData}}" wx:key="{{index}}">
+   {{item}}
+  </navigator>
+</view>

@@ -1,2 +1,62 @@
 <!--pages/cart/index.wxml-->
-<text>pages/cart/index.wxml</text>
+<view class="get_address" wx:if="{{!userAddress.userName}}" bindtap="handleGetAddress">
+  <text>获取收获地址</text>
+  <icon></icon>
+</view>
+
+<view class="user" wx:if="{{userAddress.userName}}">
+  <view class="user_info">
+    <view class="info_left">
+      <text>收货人: {{userAddress.userName}}</text>
+    </view>
+    <view class="info_right">
+      <text>{{userAddress.telNumber}}</text>
+      <icon></icon>
+    </view>
+  </view>
+  <view class="address">
+    收获地址：{{userAddress.address}}
+  </view>
+</view>
+<image src="../../images/cart_border@2x.png" mode="aspectFill" class="image"></image>
+<view class="main">
+  <view class="title">优购生活馆</view>
+
+  <view class="goods_list" wx:if="{{isShow}}">
+    <view class="goods_item" wx:for="{{goodList}}" wx:key="item">
+      <icon type="success" size="15" color="{{item.selected ? 'red' : 'gray'}}" bindtap="handleState" data-item="{{item}}"/>
+      <view class="goods">
+        <image src="{{item.goods_small_logo}}" mode="aspectFill"></image>
+        <view class="goods_right">
+          <view class="goods_title">{{item.goods_name}}</view>
+          <view class="price_num">
+            <view class="price">¥{{item.goods_price}}</view>
+            <view class="num">
+              <text bindtap="handleMinus" data-item="{{item}}" >-</text>
+              <input type="text" data-id="{{item.goods_id}}" bindinput="handleInput" bindblur="handleBlur" value="{{item.number}}"></input>
+              <text bindtap="handleAdd" data-item="{{item}}" >+</text>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="message" wx:if="{{!isShow}}">
+    购物车没商品，去逛逛！
+  </view>
+</view>
+
+<view class="footer">
+  <view class="btn">
+    <icon type="success" size="15" color="{{checked ? 'red' : 'gray'}}" bindtap="checkedState"/>
+    <text>全选</text>
+  </view>
+  <view class="footer_right">
+    <view class="total">
+      <text>合计：</text>
+      <text class="price">¥{{total}}</text>
+      <view>包含运费</view>
+    </view>
+    <view class="settle_accounts">结算（{{sum}}）</view>
+  </view>
+</view>
